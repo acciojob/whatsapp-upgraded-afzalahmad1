@@ -24,6 +24,7 @@ public class Group {
     public int getId() {
         return id;
     }
+    //y
 
     public void setId(int id) {
         this.id = id;
