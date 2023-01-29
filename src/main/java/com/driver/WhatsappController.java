@@ -20,12 +20,16 @@ import org.springframework.web.bind.annotation.RestController;
 public class WhatsappController {
 
     //Autowire will not work in this case, no need to change this and add autowire
-    WhatsappService whatsappService = new WhatsappService();
+   WhatsappService whatsappService = new WhatsappService();
+
+//    @Autowired
+//    WhatsappService whatsappService;
 
     @PostMapping("/add-user")
     public String createUser(String name, String mobile) throws Exception {
         //If the mobile number exists in database, throw "User already exists" exception
         //Otherwise, create the user and return "SUCCESS"
+
 
         return whatsappService.createUser(name, mobile);
     }
