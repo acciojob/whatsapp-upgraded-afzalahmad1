@@ -16,8 +16,7 @@ public class Group {
     public Group() {
     }
 
-    public Group(int id, String name, int numberOfParticipants) {
-        this.id = id;
+    public Group(String name, int numberOfParticipants) {
         this.name = name;
         this.numberOfParticipants = numberOfParticipants;
     }

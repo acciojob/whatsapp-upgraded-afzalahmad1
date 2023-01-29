@@ -14,8 +14,7 @@ public class User {
     public User() {
     }
 
-    public User(int id, String name, String mobile) {
-        this.id = id;
+    public User( String name, String mobile) {
         this.name = name;
         this.mobile = mobile;
     }
