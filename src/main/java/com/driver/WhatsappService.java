@@ -9,6 +9,7 @@ import org.springframework.data.repository.query.FluentQuery;
 
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -38,18 +39,30 @@ public class WhatsappService {
     }
 
     public Group createGroup(List<User> users){
+        List<User> userList = new ArrayList<>();
         Group group = new Group();
+        group.setNumberOfParticipants(users.size());
+        for(User user : userList){
+            group.setName(user.getName());
+            groupRepository.save(group);
+
+        }
+
         return group;
     }
 
     public int createMessage(String content){
         Message message = new Message();
+        message.setContent(content);
+        messageRepository.save(message);
         return message.getId();
     }
 
     public int sendMessage(Message message, User sender, Group group){
         Message message1 = new Message();
-        Group group1 = new Group();
+        Group group1 = groupRepository.findById(group.getId()).get();
+
+
         return group1.getId();
     }
 
@@ -62,6 +75,8 @@ public class WhatsappService {
     }
 
     public String findMessage(Date start, Date end, int K){
+
+
         return "ss";
     }
 }
